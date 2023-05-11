@@ -5,8 +5,8 @@ class ProfileCard {
     this.bio = userData.bio || "";
     this.html_url = userData.html_url || "";
     this.twitter_username = userData.twitter_username || "";
-    this.yOffset = 40; // Adjust the value based on your desired offset
-    this.lineHeight = 16; // Adjust the value based on your desired line height
+    this.yOffset = 40;
+    this.lineHeight = 16;
   }
 
   generateSVG() {
@@ -52,8 +52,6 @@ class ProfileCard {
         ${githubLink}
       </svg>
     `;
-
-    // console.log("Generated SVG:", svg);
 
     return svg;
   }
