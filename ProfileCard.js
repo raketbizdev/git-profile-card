@@ -10,8 +10,9 @@ class ProfileCard {
   }
 
   generateSVG() {
-    const avatar = this.avatar_url
-      ? `<image href="${this.avatar_url}" x="20" y="20" width="100" height="100" rx="50"/>`
+    const avatarUrl = this.avatar_url || "";
+    const avatar = avatarUrl
+      ? `<image href="${avatarUrl}" x="20" y="20" width="100" height="100" rx="50"/>`
       : "";
 
     const name = this.name
