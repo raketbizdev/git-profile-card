@@ -2,7 +2,7 @@ const axios = require("axios");
 const { send } = require("micro");
 const { router, get } = require("microrouter");
 const url = require("url");
-const ProfileCard = require("./ProfileCard"); // Update the file path if necessary
+const ProfileCard = require("./ProfileCard");
 
 const handler = async (req, res) => {
   const query = url.parse(req.url, true).query;
@@ -15,9 +15,8 @@ const handler = async (req, res) => {
 
   if (!username) {
     res.setHeader("Content-Type", "application/json");
-    send(
-      res,
-      400,
+    res.statusCode = 400;
+    res.end(
       JSON.stringify({
         status: "error",
         message: 'Error: Missing "username" query parameter.',
@@ -35,10 +34,16 @@ const handler = async (req, res) => {
     const svgContent = profileCard.generateSVG();
 
     res.setHeader("Content-Type", "image/svg+xml");
-    send(res, 200, svgContent);
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=profile-card.svg"
+    );
+    res.statusCode = 200;
+    res.end(svgContent);
   } catch (error) {
     console.error(error);
-    send(res, 500, `Error fetching data: ${error.message}`);
+    res.statusCode = 500;
+    res.end(`Error fetching data: ${error.message}`);
   }
 };
 

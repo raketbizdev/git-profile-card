@@ -51,6 +51,9 @@ class ProfileCard {
         ${githubLink}
       </svg>
     `;
+
+    // console.log("Generated SVG:", svg);
+
     return svg;
   }
 }
