@@ -2,6 +2,8 @@
 
 A serverless function to generate a GitHub profile card as an SVG image, which can be embedded in your GitHub README.
 
+[GitHub Profile Card](https://git-profile-card.vercel.app/?username=raketbizdev)
+
 ## Usage
 
 1. Deploy the serverless function to your preferred platform (e.g., Vercel, Netlify).

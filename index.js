@@ -14,7 +14,15 @@ const handler = async (req, res) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   if (!username) {
-    send(res, 400, 'Error: Missing "username" query parameter.');
+    res.setHeader("Content-Type", "application/json");
+    send(
+      res,
+      400,
+      JSON.stringify({
+        status: "error",
+        message: 'Error: Missing "username" query parameter.',
+      })
+    );
     return;
   }
 
@@ -30,7 +38,7 @@ const handler = async (req, res) => {
     send(res, 200, svgContent);
   } catch (error) {
     console.error(error);
-    send(res, 500, `Error fetching data: ${error.message}`); // Provide a more detailed error message
+    send(res, 500, `Error fetching data: ${error.message}`);
   }
 };
 

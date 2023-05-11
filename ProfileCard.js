@@ -42,7 +42,7 @@ class ProfileCard {
       </a>`
       : "";
 
-    http: return `
+    const svg = `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none">
         <rect width="400" height="200" rx="10" fill="#282C34"/>
         ${avatar}
@@ -51,6 +51,7 @@ class ProfileCard {
         ${githubLink}
       </svg>
     `;
+    return svg;
   }
 }
 
