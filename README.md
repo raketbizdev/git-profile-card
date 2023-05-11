@@ -8,10 +8,10 @@ A serverless function to generate a GitHub profile card as an SVG image, which c
 2. Embed the generated profile card in your GitHub README by adding the following line:
 
 ```markdown
-![GitHub Profile Card](https://your-deployed-url.example.com?username=your-username)
+![GitHub Profile Card](https://git-profile-card.vercel.app/?username=your-username)
 ```
 
-Replace `https://your-deployed-url.example.com` with the URL of your deployed serverless function and `your-username` with the GitHub username for which you want to generate the profile card.
+Replace `https://git-profile-card.vercel.app/?username=your-username` with the URL of your deployed serverless function and `your-username` with the GitHub username for which you want to generate the profile card.
 
 ## Customization
 
