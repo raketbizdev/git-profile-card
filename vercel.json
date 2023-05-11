@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "git-profile-card",
   "builds": [
     {
       "src": "index.js",
