@@ -44,7 +44,7 @@ class ProfileCard {
       : "";
 
     const svg = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="425" height="auto" viewBox="0 0 400 200" fill="none" style="margin-left: 20px">
+      <svg xmlns="http://www.w3.org/2000/svg" width="425" height="auto" viewBox="0 0 400 200" fill="none">
         <rect width="400" height="200" rx="10" fill="#282C34"/>
         ${avatar}
         ${name}
