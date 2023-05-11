@@ -34,10 +34,6 @@ const handler = async (req, res) => {
     const svgContent = profileCard.generateSVG();
 
     res.setHeader("Content-Type", "image/svg+xml");
-    res.setHeader(
-      "Content-Disposition",
-      "attachment; filename=profile-card.svg"
-    );
     res.statusCode = 200;
     res.end(svgContent);
   } catch (error) {
