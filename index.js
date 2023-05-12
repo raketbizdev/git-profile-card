@@ -31,11 +31,11 @@ const handler = async (req, res) => {
     );
     const userData = response.data;
     const profileCard = new ProfileCard(userData);
-    const svgContent = profileCard.generateSVG();
+    const cardContent = profileCard.generateCard();
 
-    res.setHeader("Content-Type", "image/svg+xml");
+    res.setHeader("Content-Type", "text/html");
     res.statusCode = 200;
-    res.end(svgContent);
+    res.end(cardContent);
   } catch (error) {
     console.error(error);
     res.statusCode = 500;
